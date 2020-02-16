@@ -1,7 +1,8 @@
 package com.aliabao.springbootspringdatajpa.Controller;
 
 import com.aliabao.springbootspringdatajpa.Pojo.User;
-import com.aliabao.springbootspringdatajpa.dao.UserJPA;
+import com.aliabao.springbootspringdatajpa.respository.UserRespository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +15,7 @@ import java.util.List;
 public class JPAController {
 
     @Autowired
-    private UserJPA userJPA;
+    private UserRespository userJPA;
 
     /**
      * 数据新增或更新，save方法可以执行添加也可以执行更新，

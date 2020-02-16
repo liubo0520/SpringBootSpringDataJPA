@@ -1,10 +1,19 @@
 package com.aliabao.springbootspringdatajpa.Controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aliabao.springbootspringdatajpa.Pojo.User;
+import com.aliabao.springbootspringdatajpa.respository.UserRespository;
+
+
 @RestController
 public class Hello {
+	@Autowired
+	private UserRespository jpa;
 //热部署
     //1.添加以来
     //2.添加插件
@@ -13,7 +22,11 @@ public class Hello {
 
     @RequestMapping("/test")
     public String test(){
-
+		
+	    List<User> list = jpa.findAll(); list.forEach(user->{
+	    	System.out.println(user.getId()); 
+		});
+		
         return "你是最帅的";
     }
     @RequestMapping("/test1")

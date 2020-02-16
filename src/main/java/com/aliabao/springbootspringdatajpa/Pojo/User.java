@@ -3,21 +3,15 @@ package com.aliabao.springbootspringdatajpa.Pojo;
 import javax.persistence.*;
 
 @Entity
-@Table(name="t_user")
+@Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "t_id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "t_name")
+    @Column(name = "name")
     private String name;
-
-    @Column(name = "t_age")
-    private String age;
-
-    @Column(name = "t_address")
-    private String address;
 
     public Long getId() {
         return id;
@@ -33,21 +27,5 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 }
