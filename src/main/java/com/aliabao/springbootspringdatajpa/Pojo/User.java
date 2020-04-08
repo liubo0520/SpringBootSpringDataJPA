@@ -2,6 +2,10 @@ package com.aliabao.springbootspringdatajpa.Pojo;
 
 import javax.persistence.*;
 
+import org.omg.CORBA.UserException;
+
+import com.aliabao.springbootspringdatajpa.dto.user.UserRule;
+
 import lombok.Data;
 
 @Entity
@@ -10,10 +14,14 @@ import lombok.Data;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name")
     private String name;
+    
+    private String realName;
+    
+    private String password;
+    
+    private UserRule userRule;
 
 }
